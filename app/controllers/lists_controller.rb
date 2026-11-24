@@ -10,7 +10,8 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list.id)
     else
-      render :new, status: :unprocessable_entity
+      render :index #<= new から indexに変更
+      render :index, status: :unprocessable_entity #Rails8を使用の方はこちら <= new から indexに変更
     end
   end
 
